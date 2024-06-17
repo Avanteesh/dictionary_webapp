@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="inner-width=intial-scale, 1.0">
+    <link rel="stylesheet" href="dictionary.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Dictionary</title>
+</head>
+<body>
+    <main class="content-container">
+        <div class="heading-section">
+            <h2>One Click Dictionary</h2>
+        </div>
+        <div class="dictionary-search-section">
+            <div class="search-div">
+                <div class="input-and-search-section">
+                    <span class="search-icon-container">
+                        <i class="bi bi-search" id="search-meaning"></i>
+                    </span>
+                    <span class="search-bar">
+                        <input class="word-input" type="text" placeholder="click and search.." maxlength="256">
+                    </span>
+                </div>
+            </div>
+            <div class="results-div">
+                <div class="meaning-of-text">
+                    <div>
+                        <h4 class="word-text">Meaning</h4>
+                    </div>
+                    <div>
+                        <p class="meaning-of-word-text"></p>
+                    </div>
+                </div>
+                <div class="pronounciation-of-word">
+                    <span class="pronounciation-icon">
+                        <!-- <audio class="audio-source"></audio> -->
+                        <i class="bi bi-volume-up" id="audio-button" style="color: #fff;"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="word-extra-info">
+                <div id="word-extra-info-div" class="word-info-syn-div">
+                    <div>
+                        <h4>Synonymes</h4>
+                    </div>
+                    <div>
+                        <p class="synonymes-text" style="color: fff;"></p>
+                    </div>
+                </div>
+                <div id="word-extra-info-div" class="word-info-antonym-div">
+                    <div>
+                        <h4>Antonymes</h4>
+                    </div>
+                    <div>
+                        <p class="Antonymes-text" style="color:#fff;"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <dialog class="error-dialog">
+            <div class="close-error-dialog-section">
+                <i class="bi bi-x-circle" id="close-error-dialog" style="color: black;"></i>
+            </div>
+            <div class="error-image">
+                <img src="catErrorPic.jpg" height="220px" width="220px">
+            </div>
+            <div class="error-message-name">
+                <p class="error-message">ERROR occurred!</p>
+            </div>
+        </dialog>
+        <audio></audio>
+    </main>
+    <script src="dictionary.js"></script>
+</body>
+</html>

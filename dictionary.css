@@ -1,0 +1,185 @@
+*,*::before,*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+    transition: 0.7s;
+}
+:root {
+    --body-background: rgb(33, 34, 43);
+    /*search box settings */
+    --input-box-border-radius: 14px;
+    --input-box-height: 63px;
+    --input-box-color: rgba(255, 136, 1, 0.966);
+    --hover-state-search-color: rgba(255, 159, 50, 0.966);
+    --audio-button-hover-state: #83838363;
+    --error-dialog-height: 39vh;
+}
+input {
+    padding-left: 2.5px;
+    font-size: 1.4rem;
+}
+input:focus {
+    outline: none;
+}
+input::placeholder {
+    font-size: 1rem;
+    color: rgb(85, 85, 85);
+}
+body {
+    display: grid;
+    place-items: center;
+    background: var(--body-background);
+    overflow-x: hidden;
+}
+.content-container {
+    display: grid;
+    place-items: center;
+    margin-top: 4vh;
+    width: 100%;
+}
+.content-container .heading-section {
+    font-size: 2rem;
+    padding: 25px;
+}
+.heading-section h2 {
+    font-weight: bold;
+    color: #fff;
+}
+.heading-section h2::after {
+    content: "";
+    --height: 5px;
+    position: relative;
+    display:block;
+    top: 3px;
+    left: 0px;
+    height: var(--height);
+    width: calc(var(--height) * 12px);
+    background-color: rgb(255, 171, 15, 0.91);
+    border-radius: 14px;
+}
+.content-container .dictionary-search-section {
+    margin: 20px;
+    padding: 20px;
+}
+.dictionary-search-section .search-div {
+    padding: 20px;
+}
+.search-div .input-and-search-section {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: var(--input-box-color);
+    height: var(--input-box-height);
+    width: calc(var(--input-box-height) * 5);
+    border-radius: var(--input-box-border-radius);
+}
+.input-and-search-section span input {
+    height: calc(var(--input-box-height) - 8px);
+    width: calc(var(--input-box-height) * 3.8);
+    border-top-right-radius: var(--input-box-border-radius);
+    border-bottom-right-radius: var(--input-box-border-radius);
+    border: none;
+    color: black;
+    font-size: calc(var(--input-box-height) - 40px);
+    background: rgba(233, 229, 223, 0.911);
+}
+.input-and-search-section .search-icon-container {
+    display: grid;
+    place-items: center;
+    padding: 18px;
+    font-size: 2rem;
+    height: calc(var(--input-box-height) - 7px);
+    color: #fff;
+    border-radius: var(--input-box-border-radius);
+}
+.search-icon-container:hover {
+    cursor: pointer;
+    background: var(--hover-state-search-color);
+}
+.dictionary-search-section .results-div {
+    display: none;  /* block when block line element */
+    padding: 20px;
+}
+.results-div .meaning-of-text div {
+    padding: 14px;
+    font-size: 1.48rem;
+    color: #fff;
+}
+.meaning-of-text div p {
+    color: #fff;
+    font-size: calc(var(--input-box-height) - 45px);
+}
+.results-div .pronounciation-of-word {
+    display: flex;
+    padding: 4px;
+    margin: 10px;
+    justify-content: flex-end;
+    width: 98%;
+    font-size: 1.9rem;
+}
+.pronounciation-of-word span {
+    display: grid;
+    place-items: center;
+    height: calc(var(--input-box-height) - 24px);
+    width: calc(var(--input-box-height) - 24px);
+    border-radius: 50%;
+    background: var(--audio-button-hover-state);
+}
+.pronounciation-of-word span:hover {
+    cursor: pointer;
+}
+.dictionary-search-section .word-extra-info {
+    display: none;   /* block line block line element */
+    margin: 0px 20px;
+    padding: 8px;
+}
+.word-extra-info div {
+    margin: 10px;
+}
+#word-extra-info-div div h4 {
+    font-size: 1.8rem;
+    padding: 8px;
+    color: #fff;
+}
+#word-extra-info-div div p {
+    font-size: calc(var(--input-box-height) - 48px);
+    padding: 0px 20px;
+    color: #fff;
+}
+/* dialog */
+.error-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border: none;
+    box-shadow: 0px 0px 15px 1px #fff;
+    border-radius: 10px;
+    height: var(--error-dialog-height);
+    width: calc(var(--error-dialog-height) * 1.3);
+    padding: 6px;
+}
+.error-dialog div {
+    width: 99%;
+    color: black;
+    font-size: 1.6rem;
+}
+.error-dialog .close-error-dialog-section {
+    display: flex;
+    justify-content: flex-end;
+}
+.close-error-dialog-section i {
+    color: black;
+}
+.close-error-dialog-section i:hover {
+    cursor: pointer;
+}
+.error-dialog .error-image {
+    display: grid;
+    place-items: center;
+}
+.error-dialog .error-message-name {
+    text-align: center;
+}
